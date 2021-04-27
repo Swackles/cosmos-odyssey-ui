@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { FindPricingListForm } from './components'
+import { FindPricingListForm, NavBar } from './components'
 import { Container, ThemeProvider } from '@material-ui/core/';
 import { PricingList, Reservations } from './pages'
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -11,6 +11,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 ReactDOM.render(
   <React.StrictMode>
     <Router forceRefresh={true}>
+      <NavBar />
       <Container style={{ marginTop: 80 }}>
         <ThemeProvider theme={createMuiTheme()}>
           <Switch>
