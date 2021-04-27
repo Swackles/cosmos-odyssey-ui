@@ -3,15 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { FindPricingListForm } from './components'
+import { Container, ThemeProvider } from '@material-ui/core/';
+import { PricingList } from './pages'
+import { createMuiTheme } from '@material-ui/core/styles';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route path="/" />
-        <Route path='/pricingLists' />
-        <Route path='/reservations' />
-      </Switch>
+    <Router forceRefresh={true}>
+      <Container style={{ marginTop: 80 }}>
+        <ThemeProvider theme={createMuiTheme()}>
+          <Switch>
+            <Route path='/pricingLists' component={PricingList} />
+            <Route path='/reservations' />
+            <Route path="/" component={FindPricingListForm} />
+          </Switch>
+        </ThemeProvider>
+      </Container>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
