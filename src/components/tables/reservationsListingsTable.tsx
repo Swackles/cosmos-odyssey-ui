@@ -1,7 +1,6 @@
 import React from 'react'
 import { DataGrid, GridCellParams, GridColDef } from '@material-ui/data-grid';
 import { Button } from '@material-ui/core';
-import { durationString } from './../../lib'
 
 interface PriceListing {
   dest: string
@@ -32,18 +31,6 @@ interface Input {
 class PriceListingsTable extends React.Component<Input> {
   public render(): JSX.Element {
     let { onView, data, } = this.props
-
-    data = data.map(x => {
-      x.fullName = `${x.firstName} ${x.lastName}`
-
-      x.startTime = new Date(x.priceListing.startTime)
-      x.endTime = new Date(x.priceListing.endTime)
-
-      x.duration = durationString(x.endTime.getTime() - x.startTime.getTime())
-      return x
-    })
-
-    console.log(data)
 
     let columns: GridColDef[] = [
       { field: 'id', headerName: 'ID', type: 'number', flex: .8 },

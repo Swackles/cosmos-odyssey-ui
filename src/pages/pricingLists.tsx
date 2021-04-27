@@ -110,8 +110,6 @@ class FindPricingListForm extends React.Component<any, State> {
         }))
       })
       .catch(err => {
-        console.log(err.response)
-        console.log(err.request)
         this.setState(state => ({
           ...state, makeReservation: {
             status: 2,

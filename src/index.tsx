@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { FindPricingListForm } from './components'
 import { Container, ThemeProvider } from '@material-ui/core/';
-import { PricingList } from './pages'
+import { PricingList, Reservations } from './pages'
 import { createMuiTheme } from '@material-ui/core/styles';
 
 ReactDOM.render(
@@ -15,7 +15,7 @@ ReactDOM.render(
         <ThemeProvider theme={createMuiTheme()}>
           <Switch>
             <Route path='/pricingLists' component={PricingList} />
-            <Route path='/reservations' />
+            <Route path='/reservations' component={Reservations} />
             <Route path="/" component={FindPricingListForm} />
           </Switch>
         </ThemeProvider>
